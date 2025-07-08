@@ -24,7 +24,10 @@
         } else {
             echo "Error: ", $query->error;
         }
+        
+        $query->close();
     }
+    $conn->close();
 ?>
 
 <!DOCTYPE html>

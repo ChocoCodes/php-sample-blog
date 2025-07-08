@@ -1,6 +1,8 @@
 <?php 
     include "dbconfig.php";
     $result = $conn->query("SELECT * FROM posts ORDER BY created_at DESC");
+
+    $conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -29,8 +31,14 @@
     <div class="main-wrapper">
         <?php if($result->num_rows > 0): ?>
             <?php while($row = $result->fetch_assoc()): ?>
-                <div class="post-container">
-                    <h2>Title: <?php echo htmlspecialchars($row['title'])?> </h2>
+                <div class="post-container" data-id="<?php echo $row['id']; ?>">
+                    <div class="post-header">
+                        <h2>Title: <?php echo htmlspecialchars($row['title'])?> </h2>
+                        <div class="post-actions">
+                            <a href="edit-post.php?id=<?php echo $row['id']; ?>">✎</a>
+                            <a href="delete-post.php?id=<?php echo $row['id']; ?>">&times;</a>
+                        </div>
+                    </div>
                     <p>Text: <?php echo htmlspecialchars($row['content'])?> </p>
                     <small> Posted on: <?php echo $row['created_at']?> </small>
                 </div> 

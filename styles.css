@@ -88,3 +88,27 @@ body, textarea {
 .add-post button {
     padding: 10px;
 }
+
+.post-header {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-actions a {
+    color: black;
+    font-size: 25px;
+    border: none;
+    text-decoration: none;
+}
+
+.post-header a:hover {
+    cursor: pointer;
+}
+
