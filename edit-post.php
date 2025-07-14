@@ -21,7 +21,11 @@
         exit;
     }
 
+    // Check if the incoming HTTP request method is POST. This ensures that the update logic only runs when a form is submitted
+    // HTTP request methods: GET, POST, PUT, PATCH, DELETE - https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods
+    // Parts of a HTTP request: Request Line(GET /route-here), Headers(browser/client info & authentication - json web tokens, cookies, sessions), Body(Data to process - Optional)
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Trim whitespaces from form data
         $title = trim($_POST['title']);
         $content = trim($_POST['content']);
 

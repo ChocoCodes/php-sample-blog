@@ -1,6 +1,6 @@
 <?php 
     include "dbconfig.php";
-    /**
+    /*
      * Handles new blog post submissions.
      * 
      * - Includes the database configuration from dbconfig.php

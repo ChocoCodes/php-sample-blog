@@ -23,7 +23,7 @@
 
     - If there are posts (i.e., $result->num_rows > 0), it loops through each post using fetch_assoc().
     - Each post is shown inside a styled <div class="post-container">.
-    - The title and content are escaped using htmlspecialchars() to prevent XSS.
+    - The title and content are escaped using htmlspecialchars() to prevent XSS - Scripting attack wherein users can inject javascript code to manipulate the webpage
     - The created_at timestamp is shown as the post date.
     
     - If no posts exist, it shows a fallback message with a link to the "Add New Post" form.
